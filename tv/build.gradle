@@ -4,7 +4,6 @@ apply plugin: 'com.github.ben-manes.versions'
 
 android {
     compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildToolsVersion
     def buildNumber = (System.getenv("BUILD_NUMBER") ?: 1) as int
 
     defaultConfig {
@@ -14,6 +13,8 @@ android {
         versionCode buildNumber
         versionName "0.1.4"
         multiDexEnabled true
+        flavorDimensions "default"
+
     }
 
     signingConfigs {

@@ -4,7 +4,6 @@ apply plugin: 'com.github.ben-manes.versions'// to check for dependency updates
 
 android {
     compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     def buildNumber = (System.getenv('BUILD_NUMBER') == null ? 0 : System.getenv('BUILD_NUMBER')) as int
     def gitBranch = (System.getenv('GIT_BRANCH') == null ? 'local' : System.getenv('GIT_BRANCH').replace('origin/', ''))
