@@ -72,6 +72,7 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
     provided "javax.annotation:javax.annotation-api:${rootProject.ext.javaxAnnotationVersion}"
-
+    debugCompile 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseCompile 'com.readystatesoftware.chuck:library-no-op:1.1.0'
     compile project(':base')
 }

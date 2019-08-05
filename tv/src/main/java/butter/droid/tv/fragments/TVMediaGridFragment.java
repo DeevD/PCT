@@ -90,10 +90,8 @@ public class TVMediaGridFragment extends VerticalGridFragment implements OnItemV
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         Activity activity = getActivity();
         setTitle(StringUtils.capWords((String) activity.getTitle()));
-
         if (activity instanceof Callback && mCallback == null) {
             mCallback = (Callback) getActivity();
         }

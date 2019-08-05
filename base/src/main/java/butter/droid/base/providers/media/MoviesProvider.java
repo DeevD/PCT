@@ -20,6 +20,7 @@ package butter.droid.base.providers.media;
 import android.support.annotation.Nullable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.readystatesoftware.chuck.ChuckInterceptor;
 
 import java.io.IOException;
 import java.util.ArrayList;

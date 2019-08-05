@@ -21,7 +21,7 @@ ext {
     buildToolsVersion = "25.0.3"
     targetSdk = 25
     compileSdk = 25
-    minSdk = 15
+    minSdk = 16
     butterknifeVersion = "8.4.0"
     okHttpVersion = "3.4.2"
     picassoVersion = "2.5.2"

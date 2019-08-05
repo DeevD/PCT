@@ -21,6 +21,7 @@ import android.content.Context;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jakewharton.picasso.OkHttp3Downloader;
+import com.readystatesoftware.chuck.ChuckInterceptor;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -54,11 +55,12 @@ public class DataModule {
 
     @Provides
     @Singleton
-    public OkHttpClient provideOkHttpClient(Cache cache) {
+    public OkHttpClient provideOkHttpClient(Cache cache,Context context) {
         return new Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)
+                .addInterceptor(new ChuckInterceptor(context))
                 .cache(cache)
                 .build();
     }

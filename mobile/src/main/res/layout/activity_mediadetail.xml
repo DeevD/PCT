@@ -8,8 +8,7 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fadingEdgeLength="0dp"
-        app:parallax_factor="1.5">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"

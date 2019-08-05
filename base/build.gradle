@@ -82,7 +82,8 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 
     provided "javax.annotation:javax.annotation-api:${rootProject.ext.javaxAnnotationVersion}"
-
+    debugCompile 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseCompile 'com.readystatesoftware.chuck:library-no-op:1.1.0'
     compile project(':vlc')
     compile project(':connectsdk')
 

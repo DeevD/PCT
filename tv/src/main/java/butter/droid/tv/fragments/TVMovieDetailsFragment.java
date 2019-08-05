@@ -84,7 +84,6 @@ public class TVMovieDetailsFragment extends TVBaseDetailsFragment implements Med
 	void loadDetails() {
 		ArrayList<Media> mediaList = new ArrayList<>();
 		mediaList.add(getMovieItem());
-
 		providerManager.getCurrentMediaProvider().getDetail(mediaList, 0, this);
 	}
 

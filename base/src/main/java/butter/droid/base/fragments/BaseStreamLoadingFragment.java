@@ -45,6 +45,7 @@ import butter.droid.base.torrent.TorrentService;
 import butter.droid.base.utils.PrefUtils;
 import butter.droid.base.utils.ThreadUtils;
 import hugo.weaving.DebugLog;
+import timber.log.Timber;
 
 
 /**
@@ -231,10 +232,11 @@ public abstract class BaseStreamLoadingFragment extends Fragment
     /**
      * Starts the torrent service streaming a torrent url
      */
+    private String TAG = "BaseStreamLoadingFrag";
     private void startStream() {
         if (null == mService) throw new IllegalStateException("Torrent service must be bound");
         String torrentUrl = mStreamInfo.getTorrentUrl();
-
+        Timber.d(TAG , "stream magnet url");
         //if the torrent service is currently streaming another file, stop it.
         if (mService.isStreaming() && !mService.getCurrentTorrentUrl().equals(torrentUrl)) {
             mService.stopStreaming();

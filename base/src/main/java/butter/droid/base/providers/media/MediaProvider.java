@@ -20,6 +20,7 @@ package butter.droid.base.providers.media;
 import android.accounts.NetworkErrorException;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -151,7 +152,7 @@ public abstract class MediaProvider extends BaseProvider {
         url = url + "?" + query;
         requestBuilder.url(url);
 
-        Timber.d(this.getClass().getSimpleName(), "Making request to: " + url);
+        Log.d(this.getClass().getSimpleName(), "Making request to: " + url);
 
         fetchList(currentList, requestBuilder, filters, callback);
     }
@@ -177,6 +178,7 @@ public abstract class MediaProvider extends BaseProvider {
                     } else {
                         url = url.replace(apiUrls[currentApi - 1], apiUrls[currentApi]);
                     }
+                    Log.d("MediaProvider", "FecthList " + url);
                     requestBuilder.url(url);
                     fetchList(currentList, requestBuilder, filters, callback);
                 }
@@ -205,8 +207,8 @@ public abstract class MediaProvider extends BaseProvider {
         Request.Builder requestBuilder = new Request.Builder();
         String url = apiUrls[currentApi] + itemDetailsPath + currentList.get(index).videoId;
         requestBuilder.url(url);
-
         Timber.d(this.getClass().getSimpleName(), "Making request to: " + url);
+        Log.d(this.getClass().getSimpleName(), "Making request to: " + url);
 
         enqueue(requestBuilder.build(), new okhttp3.Callback() {
             @Override
